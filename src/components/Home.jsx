@@ -5,7 +5,9 @@ import Lasagna from "../images/Lasagna.jpeg";
 import applepie from "../images/applepie.jpeg";
 import background from "../images/background.jpg";
 import Footer from "../components/Footer";
+import { useNavigate } from "react-router-dom";
 const HomePage = () => {
+  const navigate = useNavigate();
   const products = [
     {
       id: 1,
@@ -52,7 +54,9 @@ const HomePage = () => {
             ingredients.
           </p>
           <a
-            href="/product"
+            onClick={() => {
+              navigate("/product");
+            }}
             className="bg-white text-teal-600 font-semibold py-3 px-6 rounded-md hover:bg-gray-100 transition"
           >
             Explore Our Menu
